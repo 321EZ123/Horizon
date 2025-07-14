@@ -82,10 +82,22 @@
         overflow: hidden;
       }
       #favicon_img {
-        width: auto; /* Maintain original width */
-        height: 100%; /* Fill the height of the container */
-        max-width: 100%; /* Prevent overflow */
-        object-fit: contain; /* Maintain aspect ratio */
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      #logo_container {
+        display: flex;
+        align-items: center; 
+        height: 40px; /* Adjust as needed */
+      }
+      #logo_img {
+        width: auto;
+        height: 100%; 
+        max-height: 100%; /* Prevents stretching */
+        object-fit: contain; /* Maintains aspect ratio */
       }
     </style>
   </head>
@@ -103,6 +115,9 @@
 
     <div id="options_div" style="display: none;">
       <div style="display: flex;">
+        <div id="logo_container">
+          <img id="logo_img" src="https://raw.githubusercontent.com/321EZ123/Thingy/refs/heads/main/horizon-logo.png" alt="Horizon Logo">
+        </div>
         <h2 style="margin: 0;">Options:</h2>
         <div style="flex-grow: 1;"></div>
         <button id="close_options_button">X</button>
