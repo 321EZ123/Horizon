@@ -29,6 +29,31 @@
             margin-top: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            width: 300px;
+            max-width: 90%;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            background-color: #E6787F;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #F39A82;
+        }
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em;
@@ -36,11 +61,18 @@
             p {
                 font-size: 1.2em;
             }
+            input[type="text"], input[type="submit"] {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Horizon Search</h1>
     <p>Your gateway to endless possibilities.</p>
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="Search Freely..." required>
+        <input type="submit" value="Search">
+    </form>
 </body>
 </html>
