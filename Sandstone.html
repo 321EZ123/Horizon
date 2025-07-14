@@ -86,18 +86,25 @@
         height: 100%;
         max-width: 100%;
         object-fit: contain;
+        image-rendering: pixelated; 
       }
 
       #logo_container {
         display: flex;
         align-items: center; 
-        height: 40px; /* Adjust as needed */
+        height: 40px;
       }
       #logo_img {
         width: auto;
         height: 100%; 
-        max-height: 100%; /* Prevents stretching */
-        object-fit: contain; /* Maintains aspect ratio */
+        max-height: 100%;
+        object-fit: contain;
+        image-rendering: pixelated; 
+      }
+
+      
+      #version_p a i img {
+        image-rendering: pixelated; 
       }
     </style>
   </head>
