@@ -82,9 +82,10 @@
         overflow: hidden;
       }
       #favicon_img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+        width: auto; /* Maintain original width */
+        height: 100%; /* Fill the height of the container */
+        max-width: 100%; /* Prevent overflow */
+        object-fit: contain; /* Maintain aspect ratio */
       }
     </style>
   </head>
