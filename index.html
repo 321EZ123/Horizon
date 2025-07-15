@@ -120,6 +120,38 @@
             transform: translateX(100%);
         }
 
+        .btn-secondary {
+            color: white;
+            background: transparent;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #635bff;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-green {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-purple {
+            background-color: #b625cc;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         .hero {
             display: flex;
             justify-content: space-between;
@@ -229,7 +261,6 @@
     </style>
 </head>
 <body>
-    <!-- Background graphic elements -->
     <div class="bg-graphic bg-graphic-1"></div>
     <div class="bg-graphic bg-graphic-2"></div>
     <div class="bg-graphic bg-graphic-3"></div>
@@ -276,14 +307,6 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.nav-button').forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                const href = this.getAttribute('href');
-                openIframe(href);
-            });
-        });
-
         function openIframe(src) {
             const iframe = document.createElement('iframe');
             iframe.src = src;
@@ -296,6 +319,22 @@
             iframe.style.zIndex = '5';
             document.body.appendChild(iframe);
         }
+
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                openIframe(href);
+            });
+        });
+
+        document.querySelectorAll('.cta-buttons a').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                openIframe(href);
+            });
+        });
     </script>
     <script src="/js/main.js"></script>
     <script src="/js/subtitle.js"></script>
