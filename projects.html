@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Games | Horizon</title>
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta property="og:title" content="Welcome to Horizon, a lightweight, fast, and clean game site." />
+    <meta property="og:site_name" content="https://horizon-phi-pearl.vercel.app/" />
+    <meta property="og:description" content="Welcome to Horizon, a lightweight, fast, and clean game site." />
+    <meta name="description" content="Welcome to Horizon, a lightweight, fast, and clean game site." />
+    <meta name="author" content="3kh0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut-icon" href="/favicon.ico" />
+    <script src="/js/main.js"></script>
+    <style>
+      :root {
+        --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        --primary-color: #635bff;
+        --gradient-start: #a259ff;
+        --gradient-middle: #4776e6;
+        --gradient-end: #ff6b8b;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        color: #1a1f36;
+        line-height: 1.6;
+        background: linear-gradient(120deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        min-height: 100vh;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      @keyframes gradientAnimation {
+        0% { background-position: 0% 50% }
+        50% { background-position: 100% 50% }
+        100% { background-position: 0% 50% }
+      }
+
+      .bg-graphic {
+        position: fixed;
+        border-radius: 50%;
+        opacity: 0.4;
+        filter: blur(80px);
+        z-index: -1;
+      }
+
+      .bg-graphic-1 {
+        width: 600px;
+        height: 600px;
+        background-color: var(--gradient-start);
+        top: -200px;
+        right: -100px;
+        animation: float 20s ease-in-out infinite;
+      }
+
+      .bg-graphic-2 {
+        width: 500px;
+        height: 500px;
+        background-color: var(--gradient-middle);
+        bottom: -150px;
+        left: -100px;
+        animation: float 15s ease-in-out infinite reverse;
+      }
+
+      .bg-graphic-3 {
+        width: 300px;
+        height: 300px;
+        background-color: var(--gradient-end);
+        top: 40%;
+        left: 30%;
+        animation: float 18s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(10px, -10px) rotate(2deg); }
+        50% { transform: translate(0, -20px) rotate(0deg); }
+        75% { transform: translate(-10px, -10px) rotate(-2deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        font-weight: 500;
+        border-radius: 24px;
+        padding: 0.5rem 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.9rem;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
+        transform: translateX(-100%);
+        transition: transform 0.6s;
+      }
+
+      .btn:hover::after {
+        transform: translateX(100%);
+      }
+
+      .btn-purple {
+        background-color: #b625cc;
+        color: white;
+        border: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 20px;
+        margin-top: 5px;
+      }
+
+      .btn-purple:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        max-width: 600px;
+        margin: 20px auto;
+        color: white;
+      }
+
+      #search {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px 24px;
+        margin: auto;
+        border-radius: 30px;
+        max-width: 600px;
+        margin-bottom: 20px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        background-color: white;
+      }
+
+      #search:focus {
+        outline: none;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .game-link {
+        text-decoration: none;
+        transition: transform 0.3s ease;
+        display: inline-block;
+        margin: 10px;
+      }
+
+      .game-link:hover .game-tile {
+        transform: translateY(-8px) scale(1.03);
+      }
+
+      .game-tile {
+        background-color: #ffffff;
+        width: 280px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .game-icon {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .game-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1a1f36;
+        text-align: center;
+        margin: 12px 0;
+        padding: 0 8px;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        order: 0;
+        flex-grow: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      #loader {
+        display: block;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 4px solid white;
+        width: 50px;
+        height: 50px;
+        animation: spin 0.8s linear infinite;
+        margin: 40px auto;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      #back-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: white;
+        color: #635bff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 100;
+      }
+
+      #back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        #search {
+          max-width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background graphic elements -->
+    <div class="bg-graphic bg-graphic-1"></div>
+    <div class="bg-graphic bg-graphic-2"></div>
+    <div class="bg-graphic bg-graphic-3"></div>
+
+    <header class="navbar">
+      <a href="/" class="logo">Horizon</a>
+      <nav class="nav-links">
+        <a href="/projects.html">Games</a>
+        <a href="/misc.html">Tools</a>
+        <a href="/Horizon-Search.html">Proxy</a>
+      </nav>
+    </header>
+
+    <h1>Projects</h1>
+    <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." />
+    <div id="loader"></div>
+    <div id="game-container" class="flex-container"></div>
+    <p class="text-center">
+      <a href="/index.html" style="text-decoration: none;">
+        <button class="btn btn-purple">
+          Go to the homepage
+        </button>
+      </a>
+    </p>
+    <button id="back-to-top" title="Back to top">↑</button>
+    <script>
+      let games = [];
+      fetch("config/games.json")
+      .then((response) => response.json())
+      .then((data) => {
+        games = data;
+        const container = document.getElementById("game-container");
+        data.forEach((project) => {
+          const game = document.createElement("a");
+          game.href = project.link;
+            game.className = "game-link container";
+            game.innerHTML = `
+            <div class="game-tile">
+              <img class="game-icon" src="${project.imgSrc}" alt="icon" />
+              <p class="game-title">${project.title}</p>
+              </div>`;
+              container.appendChild(game);
+          });
+          document.getElementById("loader").style.display = "none";
+        })
+        .catch((error) => console.error("Error:", error));
+
+      function searchGames() {
+        const input = document.getElementById("search");
+        const filter = input.value.toUpperCase();
+        const container = document.getElementById("game-container");
+        container.innerHTML = "";
+        games
+          .filter((game) => game.title.toUpperCase().includes(filter))
+          .forEach((project) => {
+            const game = document.createElement("a");
+            game.href = project.link;
+            game.className = "game-link container";
+            game.innerHTML = `
+            <div class="game-tile">
+              <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
+              <p class="game-title">${project.title}</p>
+              </div>`;
+            container.appendChild(game);
+          });
+        }
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function () {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+          } else {
+          backToTopButton.style.display = "none";
+        }
+      };
+
+      backToTopButton.onclick = function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      };
+    </script>
+  </body>
+</html>
