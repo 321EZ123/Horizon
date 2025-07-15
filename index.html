@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+<head>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
     <meta property="og:title" content="Welcome to Horizon, a lightweight, fast, and clean game site." />
@@ -12,339 +12,292 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Horizon</title>
     <style>
-      :root {
-        --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        --primary-color: #635bff;
-        --gradient-start: #a259ff;
-        --gradient-middle: #4776e6;
-        --gradient-end: #ff6b8b;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: var(--font-sans);
-        color: #1a1f36;
-        line-height: 1.6;
-        background: linear-gradient(120deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
-        background-size: 400% 400%;
-        animation: gradientAnimation 15s ease infinite;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        overflow-x: hidden;
-      }
-
-      @keyframes gradientAnimation {
-        0% { background-position: 0% 50% }
-        50% { background-position: 100% 50% }
-        100% { background-position: 0% 50% }
-      }
-
-      .bg-graphic {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.4;
-        filter: blur(80px);
-        z-index: -1;
-      }
-
-      .bg-graphic-1 {
-        width: 600px;
-        height: 600px;
-        background-color: var(--gradient-start);
-        top: -200px;
-        right: -100px;
-        animation: float 20s ease-in-out infinite;
-      }
-
-      .bg-graphic-2 {
-        width: 500px;
-        height: 500px;
-        background-color: var(--gradient-middle);
-        bottom: -150px;
-        left: -100px;
-        animation: float 15s ease-in-out infinite reverse;
-      }
-
-      .bg-graphic-3 {
-        width: 300px;
-        height: 300px;
-        background-color: var(--gradient-end);
-        top: 40%;
-        left: 30%;
-        animation: float 18s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(10px, -10px) rotate(2deg); }
-        50% { transform: translate(0, -20px) rotate(0deg); }
-        75% { transform: translate(-10px, -10px) rotate(-2deg); }
-        100% { transform: translate(0, 0) rotate(0deg); }
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 2rem;
-        position: relative;
-        z-index: 10;
-      }
-
-      .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: white;
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .nav-links a {
-        color: rgba(255, 255, 255, 0.9);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s;
-      }
-
-      .nav-links a:hover {
-        color: white;
-      }
-
-      .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .btn {
-        font-weight: 500;
-        border-radius: 24px;
-        padding: 0.5rem 1.2rem;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-size: 0.9rem;
-        text-decoration: none;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
-        transform: translateX(-100%);
-        transition: transform 0.6s;
-      }
-
-      .btn:hover::after {
-        transform: translateX(100%);
-      }
-
-      .btn-secondary {
-        color: white;
-        background: transparent;
-        border: none;
-      }
-
-      .btn-primary {
-        background-color: white;
-        color: #635bff;
-        border: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-green {
-        background-color: #22c55e;
-        color: white;
-        border: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-purple {
-        background-color: #b625cc;
-        color: white;
-        border: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .hero {
-        display: flex;
-        justify-content: space-between;
-        padding: 3rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        align-items: center;
-      }
-
-      .hero-content {
-        flex: 1;
-        max-width: 600px;
-        color: white;
-      }
-
-      .hero-title {
-        font-size: 4rem;
-        line-height: 1.1;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-description {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .hero-image {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        max-width: 500px;
-      }
-
-      .card {
-        background: white;
-        border-radius: 16px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        width: 100%;
-        max-width: 450px;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      .footer {
-        margin-top: auto;
-        padding: 2rem;
-        color: rgba(255, 255, 255, 0.8);
-        text-align: center;
-        font-size: 0.9rem;
-      }
-
-      .footer a {
-        color: white;
-        text-decoration: none;
-      }
-
-      @media (max-width: 900px) {
-        .hero {
-          flex-direction: column;
-          text-align: center;
-          gap: 3rem;
+        :root {
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --primary-color: #635bff;
+            --gradient-start: #a259ff;
+            --gradient-middle: #4776e6;
+            --gradient-end: #ff6b8b;
         }
 
-        .hero-image {
-          justify-content: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .cta-buttons {
-          justify-content: center;
+        body {
+            font-family: var(--font-sans);
+            color: #1a1f36;
+            line-height: 1.6;
+            background: linear-gradient(120deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        .bg-graphic {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.4;
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
         }
 
         .nav-links {
-          display: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            font-weight: 500;
+            border-radius: 24px;
+            padding: 0.5rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            color: white;
         }
 
         .hero-title {
-          font-size: 2.5rem;
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
-      }
 
-      button:focus, a:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(99, 91, 255, 0.3);
-      }
+        .hero-description {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
 
-      @keyframes textFade {
-        0%, 100% { opacity: 0.7; }
-        50% { opacity: 1; }
-      }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
 
-      #subtitle {
-        animation: textFade 3s infinite;
-      }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            max-width: 500px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 450px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-image {
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        button:focus, a:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(99, 91, 255, 0.3);
+        }
+
+        @keyframes textFade {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        #subtitle {
+            animation: textFade 3s infinite;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Background graphic elements -->
     <div class="bg-graphic bg-graphic-1"></div>
     <div class="bg-graphic bg-graphic-2"></div>
     <div class="bg-graphic bg-graphic-3"></div>
 
     <header class="navbar">
-      <a href="/" class="logo">Horizon</a>
-      <nav class="nav-links">
-        <a href="/projects.html">Games</a>
-        <a href="/misc.html">Tools</a>
-        <a href="/Horizon-Search.html">Proxy</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="/Horizon-Search.html" class="btn btn-secondary">Browse</a>
-        <a href="/projects.html" class="btn btn-primary">Play Now</a>
-      </div>
+        <a href="/" class="logo">Horizon</a>
+        <nav class="nav-links">
+            <a href="/projects.html" class="nav-button">Games</a>
+            <a href="/misc.html" class="nav-button">Tools</a>
+            <a href="/Horizon-Search.html" class="nav-button">Proxy</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="/Horizon-Search.html" class="btn btn-secondary">Browse</a>
+            <a href="/projects.html" class="btn btn-primary">Play Now</a>
+        </div>
     </header>
 
     <main class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Lightning fast gaming experience
-        </h1>
-        <p class="hero-description">
-          Welcome to 3kh0 lite, a lightweight, lightning fast, and simple game site. Join thousands of players enjoying unblocked gaming.
-        </p>
-        <div class="cta-buttons">
-          <a href="/projects.html" class="btn btn-green">Start playing!</a>
-          <a href="/Horizon-Search.html" class="btn btn-purple">Browse freely.</a>
+        <div class="hero-content">
+            <h1 class="hero-title">Lightning fast gaming experience</h1>
+            <p class="hero-description">
+                Welcome to Horizon, a lightweight, lightning fast, and simple game site. Join thousands of players enjoying unblocked gaming.
+            </p>
+            <div class="cta-buttons">
+                <a href="/projects.html" class="btn btn-green">Start playing!</a>
+                <a href="/Horizon-Search.html" class="btn btn-purple">Browse freely.</a>
+            </div>
         </div>
-      </div>
-      <div class="hero-image">
-        <div class="card">
-          <div id="subtitle" style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 500; cursor: pointer;">Unblocked Games</div>
-          <p style="color: #6b7280; margin-bottom: 2rem;">
-            Explore our collection of lightning-fast games, optimized for speed and designed for fun.
-          </p>
-          <a href="/projects.html" style="display: block; width: 100%; background-color: #22c55e; color: white; text-align: center; padding: 0.75rem; border-radius: 8px; font-weight: 500; text-decoration: none;">
-            Play Now
-          </a>
+        <div class="hero-image">
+            <div class="card">
+                <div id="subtitle" style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 500; cursor: pointer;">Unblocked Games</div>
+                <p style="color: #6b7280; margin-bottom: 2rem;">
+                    Explore our collection of lightning-fast games, optimized for speed and designed for fun.
+                </p>
+                <a href="/projects.html" style="display: block; width: 100%; background-color: #22c55e; color: white; text-align: center; padding: 0.75rem; border-radius: 8px; font-weight: 500; text-decoration: none;">
+                    Play Now
+                </a>
+            </div>
         </div>
-      </div>
     </main>
 
     <footer class="footer">
-      &copy; Horizon, 2024. All rights reserved.
+        &copy; Horizon, 2024. All rights reserved.
     </footer>
 
+    <script>
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                openIframe(href);
+            });
+        });
+
+        function openIframe(src) {
+            const iframe = document.createElement('iframe');
+            iframe.src = src;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+            iframe.style.zIndex = '5';
+            document.body.appendChild(iframe);
+        }
+    </script>
     <script src="/js/main.js"></script>
     <script src="/js/subtitle.js"></script>
-  </body>
+</body>
 </html>
