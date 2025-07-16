@@ -103,11 +103,13 @@
             font-weight: 700;
             color: white;
             text-decoration: none;
+            margin-right: 0.5rem;
         }
 
         .nav-links {
             display: flex;
             gap: 1.5rem;
+            margin-right: auto;
         }
 
         .nav-links a {
@@ -271,8 +273,15 @@
                 justify-content: center;
             }
 
+            .navbar {
+                flex-wrap: wrap;
+            }
+
             .nav-links {
-                display: none;
+                order: 3;
+                width: 100%;
+                margin-top: 0.5rem;
+                justify-content: center;
             }
 
             .hero-title {
@@ -304,8 +313,9 @@
         <a href="index.html" class="logo">Horizon</a>
         <nav class="nav-links">
             <a href="projects.html">Games</a>
-            <a href="misc.html">Tools</a>
             <a href="Horizon-Search.html">Proxy</a>
+            <a href="misc.html">Tools</a>
+            <a href="credits.html">Credits</a>
         </nav>
         <div class="nav-actions">
             <a href="Horizon-Search.html" class="btn btn-secondary">Browse</a>
