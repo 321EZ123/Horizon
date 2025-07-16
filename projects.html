@@ -67,11 +67,13 @@
             font-weight: 700;
             color: white;
             text-decoration: none;
+            margin-right: 0.5rem;
         }
 
         .nav-links {
             display: flex;
             gap: 1.5rem;
+            margin-right: auto;
         }
 
         .nav-links a {
@@ -223,6 +225,17 @@
             #search {
                 max-width: 90%;
             }
+
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                margin-top: 0.5rem;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -235,8 +248,9 @@
         <a href="index.html" class="logo">Horizon</a>
         <nav class="nav-links">
             <a href="projects.html">Games</a>
-            <a href="misc.html">Tools</a>
             <a href="Horizon-Search.html">Proxy</a>
+            <a href="misc.html">Tools</a>
+            <a href="credits.html">Credits</a>
         </nav>
     </header>
 
