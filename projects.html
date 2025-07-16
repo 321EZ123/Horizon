@@ -10,9 +10,9 @@
     <meta name="author" content="3kh0" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="shortcut-icon" href="/favicon.ico" />
-    <script src="/js/main.js"></script>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="shortcut-icon" href="favicon.ico" />
+    <script src="js/main.js"></script>
     <style>
         :root {
             --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -121,71 +121,12 @@
             color: white;
         }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .btn {
-            font-weight: 500;
-            border-radius: 24px;
-            padding: 0.5rem 1.2rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-
-        .btn:hover::after {
-            transform: translateX(100%);
-        }
-
-        .btn-purple {
-            background-color: #b625cc;
-            color: white;
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 15px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 20px;
-            margin-top: 5px;
-        }
-
-        .btn-purple:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
         h1 {
             font-size: 3rem;
             font-weight: 700;
             color: white;
             margin: 2rem 0;
             text-align: center;
-        }
-
-        p {
-            text-align: center;
-            max-width: 600px;
-            margin: 20px auto;
-            color: white;
         }
 
         #search {
@@ -208,15 +149,21 @@
             transform: translateY(-2px);
         }
 
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
         .game-link {
             text-decoration: none;
             transition: transform 0.3s ease;
             display: inline-block;
             margin: 10px;
-        }
-
-        .game-link:hover .game-tile {
-            transform: translateY(-8px) scale(1.03);
         }
 
         .game-tile {
@@ -243,22 +190,6 @@
             text-align: center;
             margin: 12px 0;
             padding: 0 8px;
-        }
-
-        .flex-container {
-            display: flex;
-            flex-direction: row;
-            order: 0;
-            flex-grow: 0;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .container {
-            padding: 10px;
         }
 
         #loader {
@@ -317,11 +248,11 @@
     <div class="bg-graphic bg-graphic-3"></div>
 
     <header class="navbar">
-        <a href="/" class="logo">Horizon</a>
+        <a href="index.html" class="logo">Horizon</a>
         <nav class="nav-links">
-            <a href="/projects.html">Games</a>
-            <a href="/misc.html">Tools</a>
-            <a href="/Horizon-Search.html">Proxy</a>
+            <a href="projects.html">Games</a>
+            <a href="misc.html">Tools</a>
+            <a href="Horizon-Search.html">Proxy</a>
         </nav>
     </header>
 
@@ -330,7 +261,7 @@
     <div id="loader"></div>
     <div id="game-container" class="flex-container"></div>
     <p class="text-center">
-        <a href="/index.html" style="text-decoration: none;">
+        <a href="index.html" style="text-decoration: none;">
             <button class="btn btn-purple">Go to the homepage</button>
         </a>
     </p>
