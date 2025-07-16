@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>Tools | Horizon</title>
+    <title>Miscellaneous | Horizon</title>
     <style>
         :root {
             --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -215,36 +215,55 @@
 
         .nav-actions {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             align-items: center;
             margin-left: 1.5rem;
         }
 
         .btn {
-            display: inline-block;
-            padding: 8px 18px;
-            border-radius: 8px;
             font-weight: 500;
-            font-size: 1rem;
+            border-radius: 24px;
+            padding: 0.5rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
             text-decoration: none;
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
         }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+
         .btn-secondary {
-            background: rgba(255,255,255,0.15);
-            color: #fff;
+            color: white;
+            background: transparent;
+            border: none;
         }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.25);
-            color: #fff;
-        }
+
         .btn-primary {
-            background: #635bff;
-            color: #fff;
+            background-color: white;
+            color: #635bff;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .btn-primary:hover {
-            background: #7a6fff;
-            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 768px) {
@@ -289,7 +308,7 @@
     </header>
 
     <div class="container">
-        <h2>Tools</h2>
+        <h2>Miscellaneous stuff</h2>
 
         <div class="card">
             <h1>about:blank</h1>
