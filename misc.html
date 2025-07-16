@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>Miscellaneous | Horizon</title>
     <style>
         :root {
@@ -24,4 +24,326 @@
             color: #1a1f36;
             line-height: 1.6;
             background: linear-gradient(120deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
-            background-size: 400%
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        .bg-graphic {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.4;
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .bg-graphic-1 {
+            width: 600px;
+            height: 600px;
+            background-color: var(--gradient-start);
+            top: -200px;
+            right: -100px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-graphic-2 {
+            width: 500px;
+            height: 500px;
+            background-color: var(--gradient-middle);
+            bottom: -150px;
+            left: -100px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .bg-graphic-3 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--gradient-end);
+            top: 40%;
+            left: 30%;
+            animation: float 18s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -10px) rotate(2deg); }
+            50% { transform: translate(0, -20px) rotate(0deg); }
+            75% { transform: translate(-10px, -10px) rotate(-2deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        input[type="url"]:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="url"]::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #b625cc;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-graphic bg-graphic-1"></div>
+    <div class="bg-graphic bg-graphic-2"></div>
+    <div class="bg-graphic bg-graphic-3"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Horizon</a>
+        <nav class="nav-links">
+            <a href="projects.html">Games</a>
+            <a href="misc.html">Tools</a>
+            <a href="Horizon-Search.html">Proxy</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Miscellaneous stuff</h2>
+
+        <div class="card">
+            <h1>about:blank</h1>
+            <div>
+                <p>Enter a URL you want to be opened in a about:blank page below:</p>
+                <p><input id="url-target" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" /></p>
+                <p>Note this will not work with some websites, but you can copy the link of this website and put it in for extra privacy.</p>
+            </div>
+            <div class="button-row">
+                <button id="create">Create page</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1>Tab Cloaker</h1>
+            <p>Change the tab's title and icon to make it look like a different site.</p>
+            <h3>Set title</h3>
+            <input type="text" id="title" placeholder="Enter title" />
+            <button id="seTitle">Set Title</button>
+            <p>Preset Icons:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <button data-text="Google" data-icon="config/img/icons/google.png">Google</button>
+                <button data-text="Drive" data-icon="config/img/icons/drive.png">Drive</button>
+                <button data-text="Docs" data-icon="config/img/icons/docs.png">Docs</button>
+                <button data-text="YouTube" data-icon="config/img/icons/youtube.png">YouTube</button>
+                <button data-text="Canvas" data-icon="config/img/icons/canvas.png">Canvas</button>
+                <button data-text="Gmail" data-icon="config/img/icons/gmail.png">Gmail</button>
+                <button data-text="Clever" data-icon="config/img/icons/clever.png">Clever</button>
+                <button data-text="Zoom" data-icon="config/img/icons/zoom.png">Zoom</button>
+            </div>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div class="text-center">
+            <a href="index.html" class="home-button">
+                <button>Back to Homepage</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const titleEl = document.getElementById("title");
+        const setTitleEl = document.getElementById("seTitle");
+        const resetEl = document.getElementById("reset");
+        const presetButtons = document.querySelectorAll("button[data-text]");
+
+        const savedTitle = localStorage.getItem("title");
+        const savedIcon = localStorage.getItem("icon");
+
+        if (savedTitle) {
+            document.title = savedTitle;
+        }
+
+        if (savedIcon) {
+            document.querySelector("link[rel='icon']").href = savedIcon;
+        }
+
+        setTitleEl.addEventListener("click", () => {
+            if (titleEl.value) {
+                document.title = titleEl.value;
+                localStorage.setItem("title", titleEl.value);
+            }
+        });
+
+        resetEl.addEventListener("click", () => {
+            document.title = "Miscellaneous | Horizon";
+            document.querySelector("link[rel='icon']").href = "favicon.ico";
+            localStorage.removeItem("title");
+            localStorage.removeItem("icon");
+        });
+
+        presetButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                document.title = button.getAttribute("data-text");
+                document.querySelector("link[rel='icon']").href = button.getAttribute("data-icon");
+                localStorage.setItem("title", button.getAttribute("data-text"));
+                localStorage.setItem("icon", button.getAttribute("data-icon"));
+            });
+        });
+
+        const urlTargetEl = document.getElementById("url-target");
+        const createButtonEl = document.getElementById("create");
+
+        createButtonEl.addEventListener("click", () => {
+            if (urlTargetEl.value) {
+                const tab = window.open("about:blank", "_blank");
+                if (tab) {
+                    tab.document.documentElement.innerHTML = `
+                        <title>Google</title>
+                        <iframe width="100%" height="100%" src="${urlTargetEl.value}" frameborder="0" allowfullscreen></iframe>
+                        <style>
+                            body, html {
+                                margin: 0;
+                                padding: 0;
+                                height: 100%;
+                                overflow: hidden;
+                            }
+                            iframe {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                            }
+                        </style>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
