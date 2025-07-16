@@ -196,18 +196,20 @@
         }
 
         .btn {
-            background-color: #b625cc;
+            background-color: var(--primary-color);
             color: white;
             padding: 12px 24px;
             border: none;
             border-radius: 20px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
         }
 
         .btn:hover {
             background-color: #9f1f9e;
+            transform: scale(1.05);
         }
 
         .text-center {
@@ -244,9 +246,7 @@
     <div id="loader"></div>
     <div id="game-container" class="flex-container"></div>
     <p class="text-center">
-        <a href="index.html" style="text-decoration: none;">
-            <button class="btn">Go to Horizon Home</button>
-        </a>
+        <a href="index.html" class="btn">Go to Horizon Home</a>
     </p>
     <button id="back-to-top" title="Back to top">↑</button>
     <script>
