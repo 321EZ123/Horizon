@@ -213,6 +213,40 @@
             text-decoration: underline;
         }
 
+        .nav-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            margin-left: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+        }
+        .btn-primary {
+            background: #635bff;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #7a6fff;
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -228,6 +262,10 @@
                 margin-top: 0.5rem;
                 justify-content: center;
             }
+            .nav-actions {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -238,12 +276,16 @@
 
     <header class="navbar">
         <a href="index.html" class="logo">Horizon</a>
-        <nav class="nav-links">
+        <nav class="nav-links" style="margin-left: 50px;">
             <a href="projects.html">Games</a>
             <a href="Horizon-Search.html">Proxy</a>
             <a href="misc.html">Tools</a>
             <a href="credits.html">Credits</a>
         </nav>
+        <div class="nav-actions">
+            <a href="https://github.com/321EZ123/Horizon" class="btn btn-secondary">Github</a>
+            <a href="https://discord.gg/Gv4rVt2SJp" class="btn btn-primary">Discord</a>
+        </div>
     </header>
 
     <div class="container">
