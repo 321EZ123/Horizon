@@ -296,7 +296,6 @@
     </style>
 </head>
 <body>
-    <!-- Background graphic elements -->
     <div class="bg-graphic bg-graphic-1"></div>
     <div class="bg-graphic bg-graphic-2"></div>
     <div class="bg-graphic bg-graphic-3"></div>
@@ -316,12 +315,8 @@
 
     <main class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">
-                Lightning fast gaming experience
-            </h1>
-            <p class="hero-description">
-                Welcome to Horizon, a lightweight, lightning fast, and simple game site. Join thousands of players enjoying unblocked gaming.
-            </p>
+            <h1 class="hero-title">Lightning fast gaming experience</h1>
+            <p class="hero-description">Welcome to Horizon, a lightweight, lightning fast, and simple game site. Join thousands of players enjoying unblocked gaming.</p>
             <div class="cta-buttons">
                 <a href="/projects.html" class="btn btn-green">Start playing!</a>
                 <a href="/Horizon-Search.html" class="btn btn-purple">Browse freely.</a>
@@ -330,12 +325,8 @@
         <div class="hero-image">
             <div class="card">
                 <div id="subtitle" style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 500; cursor: pointer;">Unblocked Games</div>
-                <p style="color: #6b7280; margin-bottom: 2rem;">
-                    Explore our collection of lightning-fast games, optimized for speed and designed for fun.
-                </p>
-                <a href="/projects.html" style="display: block; width: 100%; background-color: #22c55e; color: white; text-align: center; padding: 0.75rem; border-radius: 8px; font-weight: 500; text-decoration: none;">
-                    Play Now
-                </a>
+                <p style="color: #6b7280; margin-bottom: 2rem;">Explore our collection of lightning-fast games, optimized for speed and designed for fun.</p>
+                <a href="/projects.html" style="display: block; width: 100%; background-color: #22c55e; color: white; text-align: center; padding: 0.75rem; border-radius: 8px; font-weight: 500; text-decoration: none;">Play Now</a>
             </div>
         </div>
     </main>
@@ -346,5 +337,13 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/subtitle.js"></script>
+    <script>
+        const basePath = window.location.origin;
+        const links = document.querySelectorAll('a[href^="/"]');
+        links.forEach(link => {
+            link.href = basePath + link.getAttribute('href');
+        });
+        console.log("Current file path:", window.location.href);
+    </script>
 </body>
 </html>
