@@ -87,6 +87,11 @@
             color: white;
         }
 
+        .nav-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
         h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -213,6 +218,19 @@
             transform: scale(1.05);
         }
 
+        .btn-secondary {
+            background-color: #333;
+        }
+        .btn-secondary:hover {
+            background-color: #222;
+        }
+        .btn-primary {
+            background-color: #5865F2;
+        }
+        .btn-primary:hover {
+            background-color: #4752C4;
+        }
+
         .text-center {
             text-align: center;
         }
@@ -236,6 +254,11 @@
                 margin-top: 0.5rem;
                 justify-content: center;
             }
+            .nav-actions {
+                margin-top: 0.5rem;
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -246,12 +269,16 @@
 
     <header class="navbar">
         <a href="index.html" class="logo">Horizon</a>
-        <nav class="nav-links">
+        <nav class="nav-links" style="margin-left: 50px;">
             <a href="projects.html">Games</a>
             <a href="Horizon-Search.html">Proxy</a>
             <a href="misc.html">Tools</a>
             <a href="credits.html">Credits</a>
         </nav>
+        <div class="nav-actions">
+            <a href="https://github.com/321EZ123/Horizon" class="btn btn-secondary">Github</a>
+            <a href="https://discord.gg/Gv4rVt2SJp" class="btn btn-primary">Discord</a>
+        </div>
     </header>
 
     <h1>Games</h1>
