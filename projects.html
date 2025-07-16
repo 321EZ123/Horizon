@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <title>Games | Horizon</title>
-    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
     <meta property="og:title" content="Welcome to Horizon, a lightweight, fast, and clean game site." />
     <meta property="og:site_name" content="https://horizon-phi-pearl.vercel.app/" />
     <meta property="og:description" content="Welcome to Horizon, a lightweight, fast, and clean game site." />
@@ -89,7 +89,7 @@
 
         .nav-actions {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
         }
 
         h1 {
@@ -202,33 +202,49 @@
         }
 
         .btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 20px;
-            font-size: 16px;
+            font-weight: 500;
+            border-radius: 24px;
+            padding: 0.5rem 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: all 0.2s;
+            font-size: 0.9rem;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn:hover {
-            background-color: #9f1f9e;
-            transform: scale(1.05);
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn:hover::after {
+            transform: translateX(100%);
         }
 
         .btn-secondary {
-            background-color: #333;
+            color: white;
+            background: transparent;
+            border: none;
         }
-        .btn-secondary:hover {
-            background-color: #222;
-        }
+
         .btn-primary {
-            background-color: #5865F2;
+            background-color: white;
+            color: #635bff;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .btn-primary:hover {
-            background-color: #4752C4;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .text-center {
