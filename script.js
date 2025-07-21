@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         iframeContainer.id = tabId;
 
         const iframe = document.createElement('iframe');
-        iframe.src = 'Horizon-Search.html';
+        iframe.src = 'Horizon-Search-Basic.html';
         iframe.frameBorder = '0';
 
         iframeContainer.appendChild(iframe);
